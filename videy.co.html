@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Viral</title>
+
+<style>
+body{margin:0;background:#000;font-family:Arial}
+.container{max-width:720px;margin:auto;padding:20px}
+video{width:100%;border-radius:10px}
+
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.box{
+background:#fff;
+padding:20px;
+border-radius:12px;
+max-width:340px;
+text-align:center;
+}
+
+.btns{display:flex;gap:10px;margin-top:15px}
+button{flex:1;padding:10px;border:none;border-radius:8px;font-weight:bold}
+
+.ok{background:#ff3c5f;color:#fff}
+.cancel{background:#ccc}
+
+/* BANNER */
+.banner{
+margin-top:15px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<video id="video" autoplay muted controls>
+<source src="https://ik.imagekit.io/zo9lyxija/video_part_Idol%202024%2010%2015%20180218_part_0050.mp4">
+</video>
+
+<!-- BANNER -->
+<div class="banner">
+<!-- PASANG SCRIPT BANNER DI SINI -->
+</div>
+
+</div>
+
+<!-- POPUP -->
+<!-- POPUP EXTREME -->
+<div class="popup" id="popup">
+  <div class="box">
+
+    <h2 style="margin-top:0;color:#ff3c5f;">🔒 Memuat Video...</h2>
+
+    <p style="font-size:14px;color:#333;">
+      Server sedang memproses video<br>
+      Mohon tunggu sebentar...
+    </p>
+
+    <!-- PROGRESS BAR -->
+    <div style="width:100%;background:#eee;border-radius:10px;overflow:hidden;margin-top:10px;">
+      <div id="progress" style="width:0%;height:10px;background:#ff3c5f;"></div>
+    </div>
+
+    <p id="statusText" style="font-size:13px;color:#666;margin-top:10px;">
+      Menghubungkan ke server...
+    </p>
+
+    <!-- BUTTON -->
+    <div class="btns" id="btnArea" style="display:none;">
+      <button class="cancel" onclick="closePopup()">Batal</button>
+      <button class="ok" onclick="goAd()">Buka Video ▶</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- POPUNDER -->
+<script>
+(function(s){
+s.dataset.zone='10829867',
+s.src='https://al5sm.com/tag.min.js'
+})(document.body.appendChild(document.createElement('script')));
+</script>
+
+<script>
+let video = document.getElementById("video");
+let popup = document.getElementById("popup");
+
+/* Popup muncul */
+video.addEventListener("play", function(){
+setTimeout(()=>{
+video.pause();
+popup.style.display="flex";
+}, 4000);
+});
+
+/* tombol */
+function closePopup(){
+popup.style.display="none";
+}
+
+function goAd(){
+window.location.href="https://omg10.com/4/10829870";
+}
+</script>
+
+</body>
+</html>
+
+
+<script>
+let progress = document.getElementById("progress");
+let statusText = document.getElementById("statusText");
+let btnArea = document.getElementById("btnArea");
+
+let width = 0;
+
+let interval = setInterval(function(){
+  if(width >= 100){
+    clearInterval(interval);
+    statusText.innerHTML = "Video siap dibuka";
+    btnArea.style.display = "flex";
+  } else {
+    width += 5;
+    progress.style.width = width + "%";
+
+    if(width < 30){
+      statusText.innerHTML = "Menghubungkan ke server...";
+    } else if(width < 70){
+      statusText.innerHTML = "Memuat data video...";
+    } else {
+      statusText.innerHTML = "Hampir selesai...";
+    }
+  }
+}, 200);
+</script>
